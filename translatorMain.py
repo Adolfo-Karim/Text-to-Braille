@@ -3,6 +3,7 @@ from os import makedirs
 from os.path import join, basename
 from sys import argv
 import json
+import pyscreenshot as ImageGrab
 import requests
 
 ENDPOINT_URL = 'https://vision.googleapis.com/v1/images:annotate'
@@ -43,6 +44,8 @@ def request_ocr(image_filenames):
 
 
 if __name__ == '__main__':
+	im=ImageGrab.grab()
+	ImageGrab.grab_to_file('im.png')
 	image_filenames = ["im.png"]
 	text= open("text.txt","w")
 	text.write("")
