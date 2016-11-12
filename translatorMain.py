@@ -56,7 +56,7 @@ if __name__ == '__main__':
 		print("""
 			Please supply an image filename
 
-			$ python textindex.py image1.jpg""")
+			$ python translatorMain.py image1.jpg""")
 	else:
 		response = request_ocr(image_filenames)
 		if response.status_code != 200 or response.json().get('error'):
