@@ -45,6 +45,7 @@ def request_ocr(image_filenames):
 
 if __name__ == '__main__':
 	im=ImageGrab.grab()
+	im.show()
 	ImageGrab.grab_to_file('im.png')
 	image_filenames = ["im.png"]
 	text= open("text.txt","w")

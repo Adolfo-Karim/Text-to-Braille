@@ -1,20 +1,59 @@
-D Document 14 X
-D School Libra X
-D Gupta, %22S X
-D Bartyzel
-x D Borah 2.pdf x
-C blackboard andrew.cmu.edu
-1115794-dt-content-rid-71516
-Apps
-Bookmarks
-d 8tracks radio l Hand
-Classes
-References
-Recipes
-Contests
-ca
-Stop Ruining Harry Potter
-New York Post
-By Johnny Oleksinski
-March 8, 2016 6:29pm
-Give it a rest, J.K. Rowling! "Harry Pott
+CAUsersladolfDocuments py
+(robo-blackjack, T
+xt (UNREGISTERED
+File Edit Selection Find View Goto Tools Project Preferences Help
+FOLDERS
+p6
+BMP-Photos
+v robo-blackjack
+O py cache
+M View all photos
+6A share G Zoom G Slideshow
+2. Draw Edit Rotate Save
+Fonts
+O arcadeclassic
+E ARCADECLA
+C.T
+3b arcadeclassic zip CAUsersudolf DocumentsGitHublText-to-BraleltranslatorMainpy (robo-blackjack Tutorian Sublime Text (UNREGISTEREDM
+v imag
+BA board jpg
+B Sprite Sheet pg
+in-Image Grab.grab()
+ARCADECLASSICTTF
+InageGrab.grab to file in. png')
+Game Objects py
+inage filenames ["im. png"
+B images
+text- open text.txt","w")
+GameStates py
+Helper functions py
+Spritesheet pg
+image filenames:
+Playerob
+py
+Please supply an inage filename
+READM
+md
+python textindex.py image1.jpg
+Playerobjec
+README md
+response request ocr(image filenames)
+response json().get ('error'):
+response status code
+print (response.text)
+img name image filenames[idx]
+jpath join(RESULTS DIR,
+datatxt json. dumps (resp, indent-2)
+print Wrote", len (datatxt), "bytes to", jpath)
+print (datatxt)
+t res textAnnotations jtej
+Text-to-B
+Program Files 86
+Python 27
+70, C
+0; Building
+Ask me anything
+Tab S
+Pyth
+11:32 AM
+2/2016
