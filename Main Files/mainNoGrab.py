@@ -37,7 +37,8 @@ class Translator(object):
 	                     'w': "010111",
 	                      'x': "101101",
 	                      'y': "101111",
-	                      'z': "101011"}
+	                      'z': "101011",
+	                      '?': "011001"}
 
 	numbers_braille1= {   "0": "010110",
 	                      "1": "100000",
@@ -233,7 +234,7 @@ class Terminal (object):
 		return binary_stream
 
 	def trivialize(self,stream):
-		new_stream = [[0]*len(stream[0]) for row in range(len(stream)//2)]
+		new_stream = [['000']*len(stream[0]) for row in range(len(stream)//2)]
 		for row in range(0,len(stream)//2,2):
 			for col in range(len(stream[0])):
 				joined_strings = stream[row][col]+stream[row+1][col]
@@ -258,7 +259,7 @@ class Terminal (object):
 def main():
 	screen_grabber = ScreenToText()
 	braille_to_text = Translator()
-	terminal = Terminal("COM12")
+	terminal = Terminal("COM4")
 
 	#x_coord = float(input("Enter x coord of box on screen"))
 	#y_coord = float(input("Enter y coord of the top left corner"))
