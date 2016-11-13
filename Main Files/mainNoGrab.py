@@ -194,8 +194,8 @@ class ScreenToText (object):
 					print(t['boundingPoly'])
 					print("    Text:")
 					print(t['description'])
-					text.write(t['description'])
 					"""
+					text.write(t['description'])
 			text.close()
 
 #serial_comunicator.py
@@ -251,7 +251,6 @@ class Terminal (object):
 				self.writeMessage((stream[row][col]+"\n").encode())
 				self.ser.flush()
 				print(self.ser.readline())
-			time.sleep(2)
 		print("waiting for result")
 		time.sleep(5)
 
