@@ -157,10 +157,10 @@ class ScreenToText (object):
 
 
 	def  run(self,box):
-		im=ImageGrab.grab(bbox = box)
-		im.show()
-		ImageGrab.grab_to_file('im.png')
-		image_filenames = ["im.png"]
+		# im=ImageGrab.grab(bbox = box)
+		# im.show()
+		# ImageGrab.grab_to_file('im.png')
+		image_filenames = ["steamingpileofshit.png"]
 		text= open("text.txt","w")
 		text.write("")
 		text.close()

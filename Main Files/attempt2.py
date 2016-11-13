@@ -2,6 +2,7 @@
 import os
 from flask import Flask, request, render_template,redirect, url_for
 from werkzeug.utils import secure_filename
+import mainNoGrab
 
 app = Flask(__name__)
 
@@ -20,6 +21,7 @@ def uploaded_file():
       # os.rename(f.filename,"steamingpileofshit.txt")
       f.save("steamingpileofshit.png")
       print(f.filename)
+      mainNoGrab.run()
       return 'file uploaded successfully'
 
 
