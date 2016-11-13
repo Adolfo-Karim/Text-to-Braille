@@ -17,7 +17,9 @@ def upload_file():
 def uploaded_file():
    if request.method == 'POST':
       f = request.files['file']
-      f.save(secure_filename(f.filename))
+      # os.rename(f.filename,"steamingpileofshit.txt")
+      f.save("steamingpileofshit.png")
+      print(f.filename)
       return 'file uploaded successfully'
 
 
