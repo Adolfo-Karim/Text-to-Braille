@@ -21,7 +21,7 @@ def uploaded_file():
       # os.rename(f.filename,"steamingpileofshit.txt")
       f.save("steamingpileofshit.png")
       print(f.filename)
-      mainNoGrab.run()
+      mainNoGrab.main()
       return 'file uploaded successfully'
 
 
