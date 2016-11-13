@@ -157,7 +157,7 @@ class ScreenToText (object):
 		return response
 
 
-	def  run(self,box):
+	def  run(self):
 		# im=ImageGrab.grab(bbox = box)
 		# im.show()
 		# ImageGrab.grab_to_file('im.png')
@@ -238,7 +238,6 @@ class Terminal (object):
 		for row in range(0,len(stream)//2,2):
 			for col in range(len(stream[0])):
 				joined_strings = stream[row][col]+stream[row+1][col]
-				print(new_stream)
 				new_stream[row//2][col]= joined_strings
 		return new_stream
 
@@ -251,7 +250,6 @@ class Terminal (object):
 				self.writeMessage((stream[row][col]+"\n").encode())
 				self.ser.flush()
 				print(self.ser.readline())
-		print("waiting for result")
 		time.sleep(5)
 
 
@@ -265,10 +263,9 @@ def main():
 	#height = float(input("Enter the height of screen grab box"))
 	#width = float(input("Enter the width of the screen grab box"))
 
-	text = screen_grabber.run((600,200,2400,800))
+	text = screen_grabber.run()
 
 	stream = braille_to_text.converter(text)
-	print(stream)
 	terminal.input_stream(stream)
 
 if __name__ == "__main__":
