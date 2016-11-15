@@ -1,6 +1,5 @@
 //functions.cpp
 #include "board.h"
-using std::string;
 
 void print_pos(Max7219 *p_display, uint8_t col, uint8_t col_code){
 	uint8_t device;
