@@ -1,10 +1,13 @@
 //functions.cpp
 #include "board.h"
+<<<<<<< HEAD
 #include "board.h"
 #include "mbed.h"
 static const uint32_t MAX_STRING_LENGTH = 32;
 static char str[MAX_STRING_LENGTH];
 
+=======
+>>>>>>> 3d6988ddc84e8c6bcb8cb7745d84584a6a90f16d
 
 void print_pos(Max7219 *p_display, uint8_t col, uint8_t col_code){
 	uint8_t device;
@@ -71,6 +74,7 @@ void braille_to_led_array(Max7219 *p_display, const char *(*braille_array)[16]){
 }
 
 
+<<<<<<< HEAD
 void braille_to_led(Max7219 *p_display, uint8_t col, const char *s){
 	uint8_t result = get_braille_simple(s);
 	print_pos(p_display, col,result);
@@ -88,3 +92,9 @@ char* get_serial_input(){
     return str;
 }
 	
+=======
+string test_array [][2] = {{"111","011","101","111","000","010","001","010"},
+			  			   {"101","001","111","101","001","110","101","011"},
+			  			   {"111","011","101","111","000","010","001","010"},
+			  			   {"101","001","111","101","001","110","101","011"}};
+>>>>>>> 3d6988ddc84e8c6bcb8cb7745d84584a6a90f16d
