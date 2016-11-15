@@ -17,8 +17,28 @@ void print_pos(Max7219 *p_display, uint8_t column, uint8_t light_combination);
 
 /*************************************
 Parameters:
-	Braile Text array (array of character pointers to pointers to strings)
+	Braile Text
 
 **************************************/
 
-void braille_to_led(Max7219 *p_display, const char *(*braille_array)[16]);
+void braille_to_led_array(Max7219 *p_display, const char *(*braille_array)[16]);
+
+
+/*************************************
+Parameters:
+	Max val
+*************************************/
+
+char* get_serial_input();
+
+/************************************
+Parameters:
+	Braile
+*************************************/
+void braille_to_led(Max7219 *p_display, uint8_t col,const char *s);
+
+/*****
+converts word to braille
+
+******/
+int get_braille_simple(const char *word);

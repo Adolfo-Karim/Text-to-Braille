@@ -37,8 +37,7 @@ class Translator(object):
 	                     'w': "010111",
 	                      'x': "101101",
 	                      'y': "101111",
-	                      'z': "101011",
-	                      '?': "011001"}
+	                      'z': "101011"}
 
 	numbers_braille1= {   "0": "010110",
 	                      "1": "100000",
@@ -169,6 +168,7 @@ class ScreenToText (object):
 		if not image_filenames:
 			print("""
 				Please supply an image filename
+
 				$ python translatorMain.py image1.jpg""")
 		else:
 			response = self.request_ocr(image_filenames)
@@ -193,9 +193,8 @@ class ScreenToText (object):
 					print(t['boundingPoly'])
 					print("    Text:")
 					print(t['description'])
-					"""
 					text.write(t['description'])
-					
+					"""
 			text.close()
 
 #serial_comunicator.py
@@ -234,10 +233,11 @@ class Terminal (object):
 		return binary_stream
 
 	def trivialize(self,stream):
-		new_stream = [['000']*len(stream[0]) for row in range(len(stream)//2)]
+		new_stream = [[0]*len(stream[0]) for row in range(len(stream)//2)]
 		for row in range(0,len(stream)//2,2):
 			for col in range(len(stream[0])):
 				joined_strings = stream[row][col]+stream[row+1][col]
+				print(new_stream)
 				new_stream[row//2][col]= joined_strings
 		return new_stream
 
@@ -249,38 +249,31 @@ class Terminal (object):
 			for col in range(len(stream[0])):
 				self.writeMessage((stream[row][col]+"\n").encode())
 				self.ser.flush()
-			input()
+				print(self.ser.readline())
+			time.sleep(2)
 		print("waiting for result")
 		time.sleep(5)
-
 
 def main():
 	screen_grabber = ScreenToText()
 	braille_to_text = Translator()
-	terminal = Terminal("COM4")
+	terminal = Terminal("COM12")
 
-	x_coord = float(input("Enter x coord of box on screen"))
-	y_coord = float(input("Enter y coord of the top left corner"))
-	height = float(input("Enter the height of screen grab box"))
-	width = float(input("Enter the width of the screen grab box"))
+	#x_coord = float(input("Enter x coord of box on screen"))
+	#y_coord = float(input("Enter y coord of the top left corner"))
+	#height = float(input("Enter the height of screen grab box"))
+	#width = float(input("Enter the width of the screen grab box"))
 
-	text = screen_grabber.run((x_coord,y_coord,height,width))
+	text = screen_grabber.run((600,200,2400,800))
 
 	stream = braille_to_text.converter(text)
+	print(stream)
 	terminal.input_stream(stream)
 
 if __name__ == "__main__":
     main()
 
 
-"""
-term = Terminal("COM12")
-stream = [["111","011","101","111","000","010","001","010","101","101","001","001","101","110","101","011"],
-		  ["101","001","111","101","001","110","101","011","101","001","111","101","001","110","101","011"],
-		  ["111","011","101","111","000","010","001","010","101","001","111","101","001","110","101","011"],
-		  ["101","001","111","101","001","110","101","011","101","001","111","101","001","110","101","011"]]
-term.input_stream(stream)
-"""
 """
 
 term = Terminal("COM12")
